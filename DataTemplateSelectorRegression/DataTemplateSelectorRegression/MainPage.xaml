@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:DataTemplateSelectorRegression"
+             mc:Ignorable="d"
+             x:Class="DataTemplateSelectorRegression.MainPage"
+             Title="Page">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="leftTemplate">
+            <ViewCell>
+                <Grid RowSpacing="0" ColumnSpacing="0" Padding="5" Margin="5,5,25,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="&#9701;" TextColor="Blue" Margin="0,0,-3,0" />
+
+                    <Frame Grid.Column="1" BackgroundColor="Blue" Padding="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                    Text="{Binding Title}"
+                                    TextColor="White"
+                                    FontSize="16" />
+                            <Label Grid.Row="1"
+                                    Text="{Binding Subtitle}"
+                                    TextColor="GhostWhite"
+                                    FontSize="11"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="End" />
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+        <DataTemplate x:Key="rightTemplate">
+            <ViewCell>
+                <Grid RowSpacing="0" ColumnSpacing="0"
+                      Padding="5"
+                      Margin="25,5,5,5">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Column="0" BackgroundColor="DodgerBlue" Padding="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                    Text="{Binding Title}"
+                                    TextColor="White"
+                                    FontSize="16" />
+                            <Label Grid.Row="1"
+                                    Text="{Binding Subtitle}"
+                                    TextColor="GhostWhite"
+                                    FontSize="11"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="End" />
+                        </Grid>
+                    </Frame>
+
+                    <Label Grid.Column="1" Text="&#9699;" TextColor="DodgerBlue" Margin="-3,0,0,0" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+        <vm:ItemDataTemplateSelector x:Key="templateSelector"
+                                     LeftTemplate="{StaticResource leftTemplate}"
+                                     RightTemplate="{StaticResource rightTemplate}">
+
+        </vm:ItemDataTemplateSelector>
+    </ContentPage.Resources>
+    <Grid>
+        <ListView x:Name="itemsList"
+                  VerticalOptions="FillAndExpand"
+                  BackgroundColor="WhiteSmoke"
+                  ItemsSource="{Binding Items}"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  ItemTemplate="{StaticResource templateSelector}" />
+
+    </Grid>
+</ContentPage>
