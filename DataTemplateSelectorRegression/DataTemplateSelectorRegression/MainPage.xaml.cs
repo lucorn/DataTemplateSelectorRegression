@@ -83,7 +83,7 @@ namespace DataTemplateSelectorRegression
 
             _viewModel.Items.Add(lastItem);
 
-            //itemsList.ScrollTo(lastItem, ScrollToPosition.End, false);
+            itemsList.ScrollTo(lastItem, ScrollToPosition.End, false);
         }
     }
 }
