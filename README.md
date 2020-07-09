@@ -11,6 +11,6 @@ Good in Xamarin.Forms v4.6.0.847:
 ![alt text](https://github.com/lucorn/DataTemplateSelectorRegression/blob/master/correct.png?raw=true)
 
 
-Good in Xamarin.Forms v4.6.0.967:
+Regressed in Xamarin.Forms v4.6.0.967:
 
 ![alt text](https://github.com/lucorn/DataTemplateSelectorRegression/blob/master/defect.png?raw=true)
