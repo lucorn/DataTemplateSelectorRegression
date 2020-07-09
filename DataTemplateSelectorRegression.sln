@@ -7,7 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplateSelectorRegress
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplateSelectorRegression.iOS", "DataTemplateSelectorRegression\DataTemplateSelectorRegression.iOS\DataTemplateSelectorRegression.iOS.csproj", "{6FCDD6C6-37F6-4CB6-BCFC-679AE4BE36B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTemplateSelectorRegression", "DataTemplateSelectorRegression\DataTemplateSelectorRegression\DataTemplateSelectorRegression.csproj", "{6B15E7C5-5E06-47C2-A7E6-2698761E5154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTemplateSelectorRegression", "DataTemplateSelectorRegression\DataTemplateSelectorRegression\DataTemplateSelectorRegression.csproj", "{6B15E7C5-5E06-47C2-A7E6-2698761E5154}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6A21DF7-DA99-4444-9ADA-6F50AA63438F}"
+	ProjectSection(SolutionItems) = preProject
+		correct.png = correct.png
+		defect.png = defect.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
