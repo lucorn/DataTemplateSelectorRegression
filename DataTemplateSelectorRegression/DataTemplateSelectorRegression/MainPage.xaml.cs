@@ -70,14 +70,14 @@ namespace DataTemplateSelectorRegression
             _viewModel.Items.Add(new Item("some of us are going to try", "right now", true));
             _viewModel.Items.Add(new Item("wish for a good outcome!", "right now", false));
             _viewModel.Items.Add(new Item("of course!", "right now", true));
-            _viewModel.Items.Add(new Item("why not", "right now", false));
+            _viewModel.Items.Add(new Item("why not. some phrase here to make the text go over more than one line. Hopefully this does...", "right now", false));
             _viewModel.Items.Add(new Item("worked just fine in Forms 4.5", "right now", false));
             _viewModel.Items.Add(new Item("yeah, recent regression!", "right now", true));
             _viewModel.Items.Add(new Item("possibly", "right now", false));
 
             _viewModel.Items.Add(new Item("some may like it", "right now", false));
             _viewModel.Items.Add(new Item("and others may not", "right now", false));
-            _viewModel.Items.Add(new Item("is the issue caused by the scrolling?", "right now", false));
+            _viewModel.Items.Add(new Item("is the issue caused by the scrolling?. No. Apparently it is caused by different sizes of the data templates that take part in the data template selector", "right now", false));
 
             var lastItem = new Item("this is the last item", "right now", false);
 

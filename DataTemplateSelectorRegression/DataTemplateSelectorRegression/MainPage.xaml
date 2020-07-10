@@ -4,73 +4,69 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:DataTemplateSelectorRegression"
+             xmlns:y="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              mc:Ignorable="d"
              x:Class="DataTemplateSelectorRegression.MainPage"
              Title="Page">
     <ContentPage.Resources>
         <DataTemplate x:Key="leftTemplate">
             <ViewCell>
-                <Grid RowSpacing="0" ColumnSpacing="0" Padding="5" Margin="5,5,25,5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Column="0" Text="&#9701;" TextColor="Blue" Margin="0,0,-3,0" />
-
-                    <Frame Grid.Column="1" BackgroundColor="Blue" Padding="5">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
+                <y:PancakeView Grid.Column="1"
+                               Padding="5"
+                               Margin="10,8,25,8"
+                               BackgroundColor="Blue"
+                               CornerRadius="0,12,12,12"
+                               >
+                    <y:PancakeView.Shadow>
+                        <y:DropShadow Color="Black" Offset="10,10"/>
+                    </y:PancakeView.Shadow>
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
                                     Text="{Binding Title}"
                                     TextColor="White"
                                     FontSize="16" />
-                            <Label Grid.Row="1"
+                        <Label Grid.Row="1"
                                     Text="{Binding Subtitle}"
                                     TextColor="GhostWhite"
                                     FontSize="11"
                                     HorizontalOptions="End"
                                     HorizontalTextAlignment="End" />
-                        </Grid>
-                    </Frame>
-                </Grid>
+                    </Grid>
+                </y:PancakeView>
             </ViewCell>
         </DataTemplate>
         <DataTemplate x:Key="rightTemplate">
             <ViewCell>
-                <Grid RowSpacing="0" ColumnSpacing="0"
-                      Padding="5"
-                      Margin="25,5,5,5">
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
-
-                    <Frame Grid.Column="0" BackgroundColor="DodgerBlue" Padding="5">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
+                <y:PancakeView Grid.Column="0"
+                               Padding="5"
+                               Margin="25,8,10,8"
+                               BackgroundColor="DodgerBlue"
+                               CornerRadius="12,12,12,0"
+                               >
+                    <y:PancakeView.Shadow>
+                        <y:DropShadow Color="Black" Offset="10,10"/>
+                    </y:PancakeView.Shadow>
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
                                     Text="{Binding Title}"
                                     TextColor="White"
                                     FontSize="16" />
-                            <Label Grid.Row="1"
+                        <Label Grid.Row="1"
                                     Text="{Binding Subtitle}"
                                     TextColor="GhostWhite"
                                     FontSize="11"
                                     HorizontalOptions="End"
                                     HorizontalTextAlignment="End" />
-                        </Grid>
-                    </Frame>
-
-                    <Label Grid.Column="1" Text="&#9699;" TextColor="DodgerBlue" Margin="-3,0,0,0" />
-                </Grid>
+                    </Grid>
+                </y:PancakeView>
             </ViewCell>
         </DataTemplate>
         <vm:ItemDataTemplateSelector x:Key="templateSelector"
